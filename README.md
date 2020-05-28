@@ -7,7 +7,17 @@ The aim of this project was threefold:
 - To assess whether a statistical model can predict the number of bike shares.
 
 ## Table of Contents
-
+1. [Hardware Used](https://github.com/meehadjawwad/London-Bikes#hardware-used)
+2. [File Descriptions](https://github.com/meehadjawwad/London-Bikes#file-descriptions)
+3. [Methods Used](https://github.com/meehadjawwad/London-Bikes#methods-used)
+4. [Technologies Used](https://github.com/meehadjawwad/London-Bikes#technologies-used)
+5. [Executive Summary](https://github.com/meehadjawwad/London-Bikes#executive-summary)
+    * [The Data](https://github.com/meehadjawwad/London-Bikes#the-data)
+    * [Data Cleaning](https://github.com/meehadjawwad/London-Bikes#data-cleaning)
+    * [Exploratory Data Analysis](https://github.com/meehadjawwad/London-Bikes#exploratory-data-analysis)
+    * [Feature Engineering](https://github.com/meehadjawwad/London-Bikes#feature-engineering)
+    * [Modelling](https://github.com/meehadjawwad/London-Bikes#modelling)
+    * [Conclusion & Further Steps](https://github.com/meehadjawwad/London-Bikes#conclusion--further-steps)
 
 ## Hardware Used
 - MacBook Pro (Retina, 13-inch, Early 2015)
@@ -130,7 +140,7 @@ _Figure 8_ represents the final residual plot. The residuals were greatly improv
 * There are linear relationships between the target and the features; and linear models can reach an accuracy score of around 83%
 * The models have trouble predicting higher values.
 
-### Further Steps
+Further Steps:
 * Due to its nature, the data has high multicollinearity, which needs to be dealt with in order the improve the models.
 * A polynomial regression model must also be built, which would require further feature engineering in order to reduce the number of features fed into the model.
 * ARIMA, SARIMA, and VAR forecasting on the data would also be interesting and useful step.

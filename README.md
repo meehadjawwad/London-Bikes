@@ -2,6 +2,7 @@
 
 ## Aim of the Project
 The aim of this project was threefold:
+
 - To identify patterns in the spread of the number of bike shares in London.
 - To evaluate the relationship between weather, time, and the number of bike shares.
 - To assess whether a statistical model can predict the number of bike shares.
@@ -20,19 +21,21 @@ The aim of this project was threefold:
     * [Conclusion & Further Steps](https://github.com/meehadjawwad/London-Bikes#conclusion--further-steps)
 
 ## Hardware Used
-- MacBook Pro (Retina, 13-inch, Early 2015)
-- Processor: 2.9 GHz Dual-Core Intel Core i5
-- Memory: 8 GB 1867 MHz DDR3
-- OS: macOS Catalina (version 10.15.3)
+```
+MacBook Pro (Retina, 13-inch, Early 2015)
+Processor: 2.9 GHz Dual-Core Intel Core i5
+Memory: 8 GB 1867 MHz DDR3
+OS: macOS Catalina (version 10.15.3)
+```
 
 ## File Descriptions
-- preprocessing.ipynb: notebook for initial data cleaning, exploration, and analysis.
-- modelling.ipynb: notebook for feature engineering, machine learning, and predictions.
-- requirements.txt: includes a list of python libraries used in the project.
+- [`preprocessing.ipynb`](https://github.com/meehadjawwad/London-Bikes/blob/master/preprocessing.ipynb): notebook for initial data cleaning, exploration, and analysis.
+- [`modelling.ipynb`](https://github.com/meehadjawwad/London-Bikes/blob/master/modelling.ipynb): notebook for feature engineering, machine learning, and predictions.
+- [`requirements.txt`](https://github.com/meehadjawwad/London-Bikes/blob/master/requirements.txt): includes a list of python libraries used in the project.
 - data:
-  - london_merged.csv: raw data file
-  - london_merged_processed.csv: cleaned data
-  - london_merged_modelling.csv: cleaned data, after feature engineering
+  - [`london_merged.csv`](https://github.com/meehadjawwad/London-Bikes/blob/master/data/london_merged.csv): raw data file
+  - [`london_merged_processed.csv`](https://github.com/meehadjawwad/London-Bikes/blob/master/data/london_merged_processed.csv): cleaned data
+  - [`london_merged_modelling.csv`](https://github.com/meehadjawwad/London-Bikes/blob/master/data/london_modelling.csv): cleaned data, after feature engineering
 
 ## Methods Used
 - Data cleaning
@@ -52,6 +55,7 @@ The aim of this project was threefold:
 
 ## Executive Summary
 As stated earlier, there were three aims of this project:
+
 - To identify patterns in the spread of the number of bike shares in London.
 - To evaluate the relationship between weather, time, and the number of bike shares.
 - To assess whether a statistical model can predict the number of bike shares.
@@ -60,10 +64,10 @@ As stated earlier, there were three aims of this project:
 The data, acquired from [Kaggle](https://www.kaggle.com/hmavrodiev/london-bike-sharing-dataset), is an hourly data of bike sharing counts, temperature, humidity, wind speed, season, holidays, and so on. The data (17,414 rows) spans over 2 years, from 2015 to 2017.
 
 ### Data Cleaning
-The numerical weather and season codes in the data were replaced with appropriate labels, and some new columns were created (_Time, Day of the Week, Week Number, Month_) out of the original _timestamp_ column. The _holiday_ and _weekend_ columns were combined into a single _holiday_ column, due to the original _holiday_ column not having a significant amount of entries.
+The numerical weather and season codes in the data were replaced with appropriate labels, and some new columns were created (`time`, `day_of_the_week`, `week_number`, `month`) out of the original `timestamp` column. The `holiday` and `weekend` columns were combined into a single `holiday` column, due to the original column not having a significant amount of entries.
 
 ### Exploratory Data Analysis
-I evaluated the representation of various columns (such as _season, weather, holidays_) within the data, through multivariate (non-graphical) analysis, and was happy with the representation.
+I evaluated the representation of various columns (such as `season`, `weather`, `holidays`) within the data, through multivariate (non-graphical) analysis, and was happy with the representation.
 
 Next, the data was plotted in order to assess any interesting patterns.
 
@@ -91,16 +95,16 @@ _Figure 4_:
 
 ![Fig. 4](https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-temp.png)
 
-_Figure 4_ represents the correlation between bikes and temperature, and suggests an overall positive correlation with more variance during extreme temperatures.
+_Figure 4_ represents the correlation between `bikes` and `temperature`, and suggests an overall positive correlation with more variance during extreme temperatures.
 
 _Figure 5_:
 
 ![Fig. 5](https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-humidity.png)
 
-_Figure 5_ represents the correlation between bikes and humidity, and suggests an overall negative correlation.
+_Figure 5_ represents the correlation between `bikes` and `humidity`, and suggests an overall negative correlation.
 
 ### Feature Engineering
-In order to transform their qualitative nature, dummy variables were created for the _weather, season, time, day, and month_ columns. The data types, and some abnormalities within the _count_ column were corrected.
+In order to transform their qualitative nature, dummy variables were created for the `weather`, `season`, `time`, `day`, and `month` columns. The data types, and some abnormalities within the `count` column were corrected.
 
 ### Modelling
 The data was firstly split into two sub-datasets, train (14,914 rows) and test (2,500) rows. Within the train sub-dataset, 5 KFold splits were created to train and validate the models. _R-squared (coefficient of determination)_ was chosen to be the scoring metric to assess the accuracy of the models.
@@ -121,7 +125,7 @@ _Figure 6_ represents the four best performing models.
 
 The Lasso model was selected due to its simplicity (lesser number of features), and was tested against the test sub-dataset. The residuals resulting from the predictions made through the model suffered from _heteroscedasticity (a condition where variance of the residuals increases as the response value increases)._
 
-As a solution, the _count_ data was log-transformed (for both the train and test sub-datasets) and the modelling process was reimplemented.
+As a solution, the `count` data was log-transformed (for both the train and test sub-datasets) and the modelling process was reimplemented.
 
 _Figure 7_:
 
@@ -141,6 +145,7 @@ _Figure 8_ represents the final residual plot. The residuals were greatly improv
 * The models have trouble predicting higher values.
 
 Further Steps:
+
 * Due to its nature, the data has high multicollinearity, which needs to be dealt with in order the improve the models.
 * A polynomial regression model must also be built, which would require further feature engineering in order to reduce the number of features fed into the model.
 * ARIMA, SARIMA, and VAR forecasting on the data would also be interesting and useful step.

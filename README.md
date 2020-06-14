@@ -71,35 +71,35 @@ I evaluated the representation of various columns (such as `season`, `weather`, 
 
 Next, the data was plotted in order to assess any interesting patterns.
 
-_Figure 1_:
-
-![Fig. 1](https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-time.png)
+| <img src='https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-time.png' width=1000> |
+| :--: |
+| _Figure 1_ |
 
 _Figure 1_ represents the overall pattern of how the number of bike shares is spread throughout the day. It can be observed that the number of bike shares first peaks at around 8 a.m. (which is probably due to the morning work commute) and then peaks again at around 5 and 6 p.m. (which is probably due to the evening work commute).
 
-_Figure 2_:
-
-![Fig. 2](https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-weekends.png)
+| <img src='https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-weekends.png' width=1000> |
+| :--: |
+| _Figure 2_ |
 
 Fig. 2 represents the same data as in Fig. 1 but differentiated between weekdays and weekends (and holidays). An interesting observation is that whereas the spread on weekdays mimics the spread in Fig. 1, the spread on weekends and holidays has a different pattern. It spreads smoothly like a bell-curve, gently peaking at 2 and 3 p.m.
 
-_Figure 3_:
-
-![Fig. 3](https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-months.png)
+| <img src='https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-months.png' width=1000> |
+| :--: |
+| _Figure 3_ |
 
 _Figure 3_ represents how the number of bike shares are spread throughout the year. It can be observed that the spread follows a smooth bell-curve, peaking during summertime in July.
 
 Next, correlations between the number of bike shares and other variables were assessed.
 
-_Figure 4_:
-
-![Fig. 4](https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-temp.png)
+| <img src='https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-temp.png' width=1000> |
+| :--: |
+| _Figure 4_ |
 
 _Figure 4_ represents the correlation between `bikes` and `temperature`, and suggests an overall positive correlation with more variance during extreme temperatures.
 
-_Figure 5_:
-
-![Fig. 5](https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-humidity.png)
+| <img src='https://github.com/meehadjawwad/London-Bikes/blob/master/images/bikes-humidity.png' width=1000> |
+| :--: |
+| _Figure 5_ |
 
 _Figure 5_ represents the correlation between `bikes` and `humidity`, and suggests an overall negative correlation.
 
@@ -117,9 +117,9 @@ The models developed were as follows:
 
 In order to determine the best alpha value for the Lasso, Ridge, and ElasticNet models, the models were looped through a list of alpha values and their R-squared values were recorded, along with the number of variables that the models found useful. 
 
-_Figure 6_:
-
-![Fig. 6](https://github.com/meehadjawwad/London-Bikes/blob/master/images/models.png)
+| <img src='https://github.com/meehadjawwad/London-Bikes/blob/master/images/models.png' width=600> |
+| :--: |
+| _Figure 6_ |
 
 _Figure 6_ represents the four best performing models.
 
@@ -127,15 +127,15 @@ The Lasso model was selected due to its simplicity (lesser number of features), 
 
 As a solution, the `count` data was log-transformed (for both the train and test sub-datasets) and the modelling process was reimplemented.
 
-_Figure 7_:
-
-![Fig. 7](https://github.com/meehadjawwad/London-Bikes/blob/master/images/models2.png)
+| <img src='https://github.com/meehadjawwad/London-Bikes/blob/master/images/models2.png' width=600> |
+| :--: |
+| _Figure 7_ |
 
 _Figure 7_ shows the four best performing models after the log-transformation. It must be noted that the R-squared scores were improved due to the transformation. Again, the Lasso model was selected due to its simplicity, and was tested against the test sub-dataset.
 
-_Figure 8_:
-
-![Fig. 8](https://github.com/meehadjawwad/London-Bikes/blob/master/images/logresid.png)
+| <img src='https://github.com/meehadjawwad/London-Bikes/blob/master/images/logresid.png' width=600> |
+| :--: |
+| _Figure 8_ |
 
 _Figure 8_ represents the final residual plot. The residuals were greatly improved in comparison to the previous model, but there is still room for improvement for higher response values.
 
